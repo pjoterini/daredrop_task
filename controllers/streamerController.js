@@ -28,7 +28,8 @@ const getStreamer = async (req, res) => {
 }
 
 const createStreamer = async (req, res) => {
-  const { name, description, platform, voteStatus } = req.body
+  const { name, description, platform } = req.body
+  const voteStatus = 0
 
   try {
     const streamer = await Streamer.create({

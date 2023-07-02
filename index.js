@@ -1,10 +1,16 @@
 require('dotenv').config()
 const express = require('express')
+const cors = require('cors')
 const mongoose = require('mongoose')
 const streamersRoutes = require('./routes/streamers')
 
 const app = express()
 
+app.use(
+  cors({
+    origin: '*'
+  })
+)
 app.use(express.json())
 
 app.use((req, res, next) => {
